@@ -1,0 +1,57 @@
+[
+  {
+    "taskId": "T001",
+    "title": "Complete DSA practice",
+    "description": "Solve 2 medium problems on arrays",
+    "startDate": "2026-03-25",
+    "endDate": "2026-03-25",
+    "category": "Study",
+    "priority": "High",
+    "isActive": true,
+    "createdAt": "2026-03-25T00:00:00.000Z"
+  },
+  {
+    "taskId": "T002",
+    "title": "Review pull requests",
+    "description": "Review team PRs before standup",
+    "startDate": "2026-03-25",
+    "endDate": "2026-03-26",
+    "category": "Work",
+    "priority": "High",
+    "isActive": true,
+    "createdAt": "2026-03-25T00:00:00.000Z"
+  },
+  {
+    "taskId": "T003",
+    "title": "Morning workout",
+    "description": "30 min cardio + stretching",
+    "startDate": "2026-03-24",
+    "endDate": "2026-03-28",
+    "category": "Health",
+    "priority": "Medium",
+    "isActive": true,
+    "createdAt": "2026-03-25T00:00:00.000Z"
+  },
+  {
+    "taskId": "T004",
+    "title": "Read productivity book",
+    "description": "Read 20 pages of Atomic Habits",
+    "startDate": "2026-03-25",
+    "endDate": "2026-03-27",
+    "category": "Learning",
+    "priority": "Low",
+    "isActive": true,
+    "createdAt": "2026-03-25T00:00:00.000Z"
+  },
+  {
+    "taskId": "T005",
+    "title": "Update project docs",
+    "description": "Document API endpoints",
+    "startDate": "2026-03-23",
+    "endDate": "2026-03-24",
+    "category": "Work",
+    "priority": "Medium",
+    "isActive": true,
+    "createdAt": "2026-03-25T00:00:00.000Z"
+  }
+]
