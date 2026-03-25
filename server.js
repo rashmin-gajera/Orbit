@@ -140,12 +140,18 @@ app.post('/api/logs', (req, res) => {
     });
 });
 
-// SPA and static fallback (non-API routes): serve index.html
+// SPA and static fallback (non-API routes)
 app.get('*', (req, res) => {
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'API route not found' });
   }
-  res.sendFile(path.join(__dirname, 'index.html'));
+
+  const staticFile = path.join(__dirname, req.path);
+  if (fs.existsSync(staticFile) && fs.statSync(staticFile).isFile()) {
+    return res.sendFile(staticFile);
+  }
+
+  return res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
