@@ -79,6 +79,11 @@ function seedDatabase() {
   });
 }
 
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // API Routes
 app.get('/api/tasks', (req, res) => {
   db.all('SELECT * FROM tasks ORDER BY createdAt DESC', [], (err, rows) => {
