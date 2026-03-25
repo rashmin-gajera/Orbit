@@ -11,7 +11,12 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('.')); // Serve static files
+app.use(express.static(path.join(__dirname))); // Serve static files from project root
+
+// Root HTML route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Database setup
 const db = new sqlite3.Database('./tasks.db', (err) => {
