@@ -13,11 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname))); // Serve static files from project root
 
-// Root HTML route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 // Database setup
 const db = new sqlite3.Database('./tasks.db', (err) => {
   if (err) {
@@ -143,6 +138,14 @@ app.post('/api/logs', (req, res) => {
       if (err) return res.status(500).json({ error: err.message });
       res.json({ id: this.lastID });
     });
+});
+
+// SPA and static fallback (non-API routes): serve index.html
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API route not found' });
+  }
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
